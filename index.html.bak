@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>我爱记单词</title>
+  <style type="text/css">
+ /*允许使用自定义字体的模块*/
+@font-face {
+    font-family: 'ciclefina'; /*设置艺术字体*/
+    src: url('images/cicle-webfont.woff2') format('woff2'),
+	     url('images/cicle-webfont.woff') format('woff'),
+         url('images/ciclefina-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'zantroke';
+    src: url('images/zantroke-webfont.woff2') format('woff2'),
+	     url('images/zantroke-webfont.woff') format('woff'),
+         url('images/zantroke-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+} 
+
+    html,body{
+	margin:0 auto;  /*去掉边距*/
+ /*	font-size:页面打开时，由用户端的window.innerWidth属性决定*/
+		}
+	html{
+	 font-family:"Helvetica","Arial";
+	 height: 100%;
+	}
+	header{
+	font-family: 'zantroke';
+	height:150px;
+	background:url("images/header3.jpg") no-repeat center ;
+	color:pink;
+    text-align:center;
+	text-shadow:blue 3px 2px ;
+	}
+	header>h1{
+	 margin:0 auto;
+	 padding:10px;
+	 font-size:1.8em;
+	 letter-spacing:0.2em;
+	}
+	header>h1>span{
+	font-size:0.5em;
+	}
+
+	nav{
+	height:50px;
+	margin:30px auto;
+	}
+    nav span{
+	 font-size: 1.3em;
+	 border:3px outset   ;
+	 background-color:rgb(100,200,250);
+	 border-radius: 15% ;
+	 padding: 0.2em ;
+	 color:white;
+	 cursor: pointer;
+	 }
+     nav span:hover{
+	  background-color:rgb(0,0,200);
+	 }
+	  .onclickStyle{
+	   border:3px  inset  ;
+	   background-color:rgb(0,0,100);
+	   color:rgb(200,200,300) ;
+	 }
+
+
+	article{
+	 font-family: 'ciclefina';
+	 border:1px solid rgb(50,50,150);
+	 padding:5px;
+	 text-align:justify;
+	 line-height:1.5;
+     color:rgb(0,0,100) ;
+	 background-color:rgb(200,200,220);
+	}
+/*在网站自适应设计中用到，功能是为了不同的媒体设置不同的css样式，media screen在打印设备中无效  */
+  @media screen and (min-width:600px){ 
+    section{
+	 display: flex;
+	}
+	article#help{
+	 flex: 1 ;
+	}
+	article#word{
+	 flex: 2;
+	 text-align:center;
+	}
+	article#help div#backPic img{
+	 width:100%;
+	 /*height:100%;如果设置这条，会照成窄屏幕出现图像变形*/
+	}
+	article#help p#textInfo{
+	position:relative;
+	left:0.2em;
+	top:65%;
+	}
+   }/*end of media screen @ min-width:600px */
+
+/*在网站自适应设计中用到，功能是为了不同的媒体设置不同的css样式，media screen在打印设备中无效  */
+ @media screen and (max-width:600px){
+   article#help{
+	 height:25% ;
+	}
+	article#word{
+	 height:70% ;
+	 text-align:center;
+	}
+	article#help div#backPic img{
+	 width:100%;
+	 /*height:100%;如果设置这条，会照成窄屏幕出现图像变形*/
+	}
+	article#help p#textInfo{
+	position:relative;
+	line-height:1.5;
+    margin-left:35%;
+	}
+  }
+    article#help{
+	  position:relative;
+	  background-color:rgb(100,100,300);
+	  overflow:hidden;
+	   	} 
+	article#help div#backPic{
+	 position:absolute;
+	 height:98%;
+	 left:1%;top:1%;
+	 z-index: 1 ;
+	}
+
+	 article#help p#textInfo{
+	  color:pink;
+	  font-size:1.3em;
+	  text-indent:2em;
+	  z-index: 2 ;
+	  padding:1%;
+	 }
+
+	article#word div#menu input#en{ font-family: 'zantroke';
+	color:blue;
+	margin:0.2em;
+	font-size:1.5em;
+	}
+	footer{
+	font-family: 'zantroke','Arial Black';
+	background-color:rgb(100,150,300);
+	color:white;
+	font-size:1.2em;
+	text-align:center;
+	height:50px;
+	padding-top:15px;
+	}
+
+    article#word{
+	 text-align:center;
+	 cursor:pointer;
+	 position:relative;
+	}
+	 article#word>h1{
+	 font-size:1.3em ;
+	 color:blue;
+	 margin:0.2em auto;
+	}
+	article#word>input{
+	 width:100%; 
+	 font-family:'zant';
+	 color:rgb(0,0,200);
+     font-size:2em;
+	 margin:0.2em auto;
+	 text-align:center;
+	}
+	
+	article#word p#pn{
+	 font-family:'Arial','ciclefina';
+	 color:rgb(0,0,150);
+	 font-size:2em;
+	 margin:0.1em ;
+	}
+	article#word p#cn{
+	 font-family:'幼圆', '黑体';
+	 font-size:1.5em;
+	 color:rgb(0,0,150);
+	 margin:0.5em auto;
+	}
+	article#word nav{
+	 font-family:'幼圆', '黑体';
+	 font-size:1.1em;
+	 color:rgb(0,0,150);
+	 margin:auto;
+	}
+	article#word nav span{
+	margin-right:1em;
+	}
+	article#word nav span:hover{
+	 background-color:rgb(0,0,220);
+	}
+
+  
+    article#word p#cn p{
+	 font-size:1.2em;
+	 margin:0.2em auto ;
+	 border:1px solid black ;
+	
+	}
+	article#word p#cn p:hover{
+	  background-color:rgb(100,100,300);
+     }
+
+	 article#help p#para{
+	  position:relative;
+	  top:1%;
+	  color:pink;
+	  font-size:1.3em;
+	  text-indent:2em;
+	  z-index: 2 ;
+	  padding:1%;
+	  overflow:auto;
+	}
+  </style>
+  <script src="images/words.js">
+  </script>
+  <script src="images/20192977.js">
+  </script>
+  <script type="text/javascript">
+  <!--
+	var paraContent=[" They’re not optional sidebars—they’re part of the core content!","Part of the learning  happens after you put the book down.","Your brain works best in a nice bath of fluid.","If you’re trying to understand something say it out loud. ","I will always be, even lonely open into the sea.","Forget all the reason why it wont work and believe the one reason why it will.","The best part of being mature is that you no longer like the things that you really want"];
+  //-->
+  </script>
+  </head>
+ <body>
+  <header> 
+   <h1>I love to remember words <span>（大学英语6级）</span></h1>
+   <nav>
+    <span   id="read">读一读</span>
+    <span   id="write">写一写</span>
+    <span   id="select">选一选</span>
+    <span   id="search">搜一搜</span>
+    <span   id="listen">听一听</span>
+   </nav>
+  </header>
+  <section>
+    <article id = "help">
+	  <p id="textInfo">
+     Photo from the "BaiDu".
+	 请选择上面状态按钮，进入相应学习单词的模式。
+	 </p>
+	 <p	id="para"></p>
+	 <div id="backPic" >
+	 </div>
+	</article>
+	<article id = "word">
+	  <div id="menu" class="">
+	    <input id="en" type="text" value="">
+	    <p id="pn">/ ə'biliti /</p>
+		<nav>
+	   <span id="ok">确认</span>
+       <span id="next">下一个</span>
+	  </nav>
+	</div>
+	<h1>当前单词</h1>
+	<p id="cn">n.能力；本领；才能，才干；专门技能，天资</p>
+    </article>
+
+  </section>
+  <footer>
+    Code By 19Java一班20192977程倩 
+  </footer>
+ </body>
+</html>
